@@ -8,8 +8,5 @@ __pycache__/
 
 # Data files (do not commit)
 data*/
-**/*.csv
-*.db
-*.duckdb
 
 .DS_Store
