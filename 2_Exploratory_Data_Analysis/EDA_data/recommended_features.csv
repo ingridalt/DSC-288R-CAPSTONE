@@ -1,8 +1,5 @@
 column,label,correlation,abs_corr
 PRIVCOV,Private health insurance coverage recode,-0.47046300976955346,0.47046300976955346
-HINS4,"Medicaid, Medical Assistance, or any kind of government-assistance plan for those with low incomes or a disability",0.4544348230916141,0.4544348230916141
-HINS1,Insurance through a current or former employer or union,-0.4385770121552244,0.4385770121552244
-WAGP,Wages or salary income past 12 months (use ADJINC to adjust WAGP to constant dollars),0.36277035704730326,0.36277035704730326
 PUBCOV,Public health coverage recode,0.34963566399902524,0.34963566399902524
 OCCP,Occupation recode for 2018 and later based on 2018 OCC codes,-0.283952731881885,0.283952731881885
 WRK,Worked last week,-0.26520258382038087,0.26520258382038087
@@ -12,30 +9,15 @@ WKL,When last worked,-0.24497455160279885,0.24497455160279885
 MSP,"Married, spouse present/spouse absent",-0.244188769905906,0.244188769905906
 MAR,Marital status,-0.21994665717317158,0.21994665717317158
 WKHP,Usual hours worked per week past 12 months,0.21641835651985614,0.21641835651985614
-NWLK,Looking for work (UNEDITED-See 'Employment Status Recode' (ESR)),0.20994325684698498,0.20994325684698498
-NWLA,On layoff from work (UNEDITED-See 'Employment Status Recode' (ESR)),0.19639526735526835,0.19639526735526835
-RACSOR,Some other race recode (Some other race alone or in combination with one or more other races),-0.19451120015250997,0.19451120015250997
-NWAB,Temporary absence from work (UNEDITED-See 'Employment Status Recode' (ESR)),0.18226784256359452,0.18226784256359452
 LANX,Language other than English spoken at home,0.17120541723612345,0.17120541723612345
-RETP,Retirement income past 12 months (use ADJINC to adjust to constant dollars),0.16539105635594503,0.16539105635594503
-ANC2P,Ancestry recode - second entry,-0.14577875114201871,0.14577875114201871
 HICOV,Health insurance coverage recode,-0.13801492574948004,0.13801492574948004
-DOUT,Independent living difficulty,0.13030137203792774,0.13030137203792774
 RAC1P,"Recoded detailed race code (Note: due to space restrictions, some labels may be truncated.)",-0.12353188154141181,0.12353188154141181
 DIS,Disability recode,0.12172871847964631,0.12172871847964631
-DREM,Cognitive difficulty,0.11901923327475156,0.11901923327475156
-INTP,"Interest, dividends, and net rental income past 12 months (use ADJINC to adjust to constant dollars)",0.11768238923936344,0.11768238923936344
-RACWHT,White recode (White alone or in combination with one or more other races),0.1067197035860652,0.1067197035860652
-DPHY,Ambulatory difficulty,0.10134455074752809,0.10134455074752809
-RACASN,Asian recode (Asian alone or in combination with one or more other races),0.10081160509735325,0.10081160509735325
 RC,Related child,-0.09553423505709424,0.09553423505709424
 AGEP,Age,0.0950970221559443,0.0950970221559443
-NWAV,Available for work (UNEDITED-See 'Employment Status Recode' (ESR)),0.09218939221441359,0.09218939221441359
 POBP,Place of birth (Recode),-0.08447769353213053,0.08447769353213053
 CIT,Citizenship status,-0.08344323453839257,0.08344323453839257
-RAC3P,Recoded detailed race code,-0.08294906059801578,0.08294906059801578
-SEMP,Self-employment income past 12 months (use ADJINC to adjust SEMP to constant dollars),0.0825489892200782,0.0825489892200782
+HISP,Recoded detailed Hispanic origin,-0.07753530936054835,0.07753530936054835
 NATIVITY,Nativity,-0.0680588111895498,0.0680588111895498
 MIG,Mobility status (lived here 1 year ago),-0.04448039111907749,0.04448039111907749
-MIL,Military service,-0.042980364030605775,0.042980364030605775
 SEX,Sex,-0.03115456064656444,0.03115456064656444
