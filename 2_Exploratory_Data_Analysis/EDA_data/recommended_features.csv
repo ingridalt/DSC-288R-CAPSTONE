@@ -21,3 +21,4 @@ SEX,Sex,"{""item"": {""1"": ""Male"", ""2"": ""Female""}}"
 WKHP,Usual hours worked per week past 12 months,"{""item"": {""0"": ""N/A (less than 16 years old/did not work during the past 12 months)"", ""99"": ""99 or more usual hours""}, ""range"": [{""min"": ""1"", ""max"": ""98"", ""description"": ""1 to 98 usual hours""}]}"
 WKL,When last worked,"{""item"": {""2"": ""1-5 years ago"", ""1"": ""Within the past 12 months"", ""0"": ""N/A (less than 16 years old)"", ""3"": ""Over 5 years ago or never worked""}}"
 WRK,Worked last week,"{""item"": {""0"": ""N/A (not reported)"", ""1"": ""Worked"", ""2"": ""Did not work""}}"
+year,,
