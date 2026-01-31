@@ -7,6 +7,7 @@ __pycache__/
 .env
 
 # Data files (do not commit)
-data*/
+data_persons_ca_1yr/
+3_Data_Preprocessing/preprocessing_data/
 
 .DS_Store
