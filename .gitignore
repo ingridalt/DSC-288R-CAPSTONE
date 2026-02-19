@@ -12,3 +12,6 @@ data_persons_ca_1yr/
 3_Data_Preprocessing+Models/catboost_info/
 
 .DS_Store
+3_Data_Preprocessing/preprocessing_data/test_engineered.csv
+3_Data_Preprocessing/preprocessing_data/train_data_final_feat_no_preprocessing.csv
+3_Data_Preprocessing/preprocessing_data/train_engineered.csv
