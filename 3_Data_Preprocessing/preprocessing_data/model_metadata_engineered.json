@@ -1,0 +1,49 @@
+{
+  "optimal_features": [
+    "education_tier",
+    "MSP",
+    "WKHP",
+    "ESR",
+    "ENG",
+    "CIT",
+    "MAR",
+    "MIG",
+    "is_latinx",
+    "has_insurance",
+    "AGEP",
+    "OCCP",
+    "race_white",
+    "race_black",
+    "race_asian",
+    "race_indigenous",
+    "race_other",
+    "race_ethnic_aggregate"
+  ],
+  "n_features": 18,
+  "best_threshold_f1": 0.5690643191337585,
+  "threshold_recall_80": 0.4685576260089874,
+  "cv_macro_f1_mean": 0.6917009935348972,
+  "cv_macro_f1_std": 0.00038137376276859206,
+  "holdout_macro_f1": 0.6874274616663096,
+  "holdout_accuracy": 0.7306779950586133,
+  "holdout_balanced_acc": 0.745616949366087,
+  "feature_engineering": {
+    "disability_score": "Sum of DEAR, DEYE, DPHY, DREM, DDRS, DOUT (0-6)",
+    "has_insurance": "Binary: HICOV==1 (has any insurance)",
+    "race_columns": "One-hot from RACWHT, RACBLK, RACASN, RACAIAN+RACNH+RACPI, RACSOR",
+    "is_latinx": "Binary: HISP > 1",
+    "race_ethnic_aggregate": "Sum of race one-hot + is_latinx",
+    "education_tier": "SCHL mapped to 0-4 (No HS, HS, Some College, Bachelors, Advanced)"
+  },
+  "dropped_features": {
+    "DIS": "Replaced by disability_score (0-6)",
+    "HICOV": "Replaced by has_insurance (binary)",
+    "PRIVCOV": "Replaced by has_insurance (binary) \u2014 was 0.32 importance, possible quasi-leakage",
+    "PUBCOV": "Replaced by has_insurance (binary) \u2014 Medi-Cal requires poverty-level income",
+    "RAC1P": "Replaced by one-hot race columns \u2014 label encoding was methodologically wrong",
+    "SCHL": "Replaced by education_tier (0-4)",
+    "LANP": "Dropped \u2014 57% null, high cardinality (200+ languages)",
+    "POBP": "Dropped \u2014 high cardinality (200+ places of birth)",
+    "year": "Dropped \u2014 no temporal drift detected in random vs temporal split analysis"
+  }
+}
