@@ -1,1 +1,0 @@
-This directory Unused_Trial_Notebooks show cases all of the hard work that went into this project that did not make the final cut.
