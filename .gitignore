@@ -1,4 +1,12 @@
-# Jupyter
+
+# Random Forest artifacts
+3_Data_Preprocessing/preprocessing_data/
+*.npz
+*.joblib
+*.pkl
+
+# RF outputs
+y_*_rf.csv# Jupyter
 .ipynb_checkpoints/
 
 # Python
