@@ -6,13 +6,9 @@ Using ACS PUMS Census Data to Identify At-Risk Individuals Before They Fall Belo
 ---
 
 #### **Why This Matters:** 
-Poverty is one of the most consequential and measurable public health challenges in California. Despite being the world's fifth-largest economy, California has one of the highest poverty rates in the United States when adjusted for cost of living. The complexity of risk detection, the breadth of Census data available, and the scale of the population make this an ideal problem for machine learning.
-<br>**Our goal:** Build a scalable pre-screening framework that state agencies and social service organizations can use to proactively identify individuals at risk — enabling early intervention, equitable resource distribution, and prevention before families slide further into poverty. </br>
+Poverty is one of the most consequential and measurable public health challenges in California. California has one of the highest poverty rates in the United States when adjusted for cost of living. With the complexity of risk detection, ACS provided vast features and scale of data makes this an ideal problem for Machine Learning. 
+<br>**Our goal:** Build a scalable pre-screening framework that state agencies and social service organizations can use to proactively identify individuals at risk, enabling early intervention, equitable resource distribution, and prevention before families slide further into poverty. </br>
 
-
-#### Prediction Objective
-Classify California adults into 4 poverty risk categories derived from the ACS PUMS income-to-poverty ratio variable (POVPIP):
-ClassLabelPOVPIP Range0Stable> 200% FPL1Near Poverty101–200% FPL2Poverty51–100% FPL3Deep Poverty≤ 50% FPL
 
 #### Data
 Dataset: https://www2.census.gov/programs-surveys/acs/data/pums/ 
