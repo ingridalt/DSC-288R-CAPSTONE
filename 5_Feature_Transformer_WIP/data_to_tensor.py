@@ -6,6 +6,10 @@ from torch.utils.data import Dataset
 class ACSDataset(Dataset):
     def __init__(self, df, cat_cols, cont_cols, target_col):
         # Converting  columns to Tensors for init
+
+        assert df[cat_cols + cont_cols].isnull().sum().sum() == 0, \
+            "NaNs detected in feature columns."
+
         self.x_cat = torch.tensor(df[cat_cols].values, dtype=torch.long)
         self.x_cont = torch.tensor(df[cont_cols].values, dtype=torch.float32)
         self.y = torch.tensor(df[target_col].values, dtype=torch.long)
