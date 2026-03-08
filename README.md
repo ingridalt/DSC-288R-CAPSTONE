@@ -19,7 +19,6 @@ Raw size: ~2.3M records, 275 columns
 Split strategy: Temporal — train on historical years, test on 2024 holdout to simulate real-world deployment
 
 
-
 #### Modeling Approach
 <table>
   <thead>
@@ -74,13 +73,40 @@ Split strategy: Temporal — train on historical years, test on 2024 holdout to 
 </pre>
 
 
-#### **Environment Setup**
+#### ** Conda Environment Setup**
 <u>To use the Conda env, user must run the following commands </u>
 
 `conda init`
 
 `make setup`
 
-<u>To update the env  user can run</u>
+<u>Run this command to update any new dependencies from other users</u>
 
 `make update `
+
+<u>To update requirements.txt after installing new ones run </u>
+
+`make freeze`
+
+#### Raw Data Download
+
+Due to file size constraints, raw data is **not tracked in GitHub** and must be downloaded locally by running the provided script.
+
+This project uses the [American Community Survey (ACS) PUMS 1-Year](https://www.census.gov/programs-surveys/acs/microdata.html) 
+person-level microdata for California, covering **2018, 2019, 2021, 2022, 2023, and 2024** 
+(2020 is excluded due to pandemic-related data collection disruptions).
+
+**To download the raw data, run:**
+```bash
+python 1_Raw_Data/download_acs_data.py
+```
+
+The script will:
+1. Download each year's data directly from the [Census Bureau FTP site](https://www2.census.gov/programs-surveys/acs/data/pums/)
+2. Prompt you before overwriting any year that has already been downloaded
+3. Combine all years into a single file, keeping only columns common across all years
+4. Filter to adults (age 19+)
+5. Save the final dataset to `1_Raw_Data/data_persons_ca_1yr/persons_master.csv`
+
+> **Note:** The full download is large. Expect the process to take several minutes depending on your connection speed.
+
