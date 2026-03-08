@@ -1,1 +1,1 @@
-This directory 'Archive' show cases all of the hard work that went into this project that did not make the final cut.
+This directory 'Archive' showcases all of the hard work that went into this project that did not make the final cut. The notebooks in here are not reproducible.
