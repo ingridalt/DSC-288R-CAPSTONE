@@ -9,6 +9,7 @@ class FTTransformer(nn.Module):
 
     def __init__(self, cat_cardinalities, n_cont, embed_dim=32, n_layers=3, n_heads=4, n_classes=4):
         super().__init__()
+
         #tokenizer  Categorical data
         self.cat_embeddings = nn.ModuleList([
             nn.Embedding(card + 1, embed_dim) for card in cat_cardinalities
