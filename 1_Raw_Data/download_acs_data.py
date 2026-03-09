@@ -26,28 +26,28 @@ from pathlib import Path
 import warnings
 warnings.filterwarnings('ignore')
 
-SCRIPT_DIR  = Path(__file__).resolve().parent
-BASE_DIR    = str(SCRIPT_DIR / "data_persons_ca_1yr")
+BASE_DIR    = "1_Raw_Data/data_persons_ca_1yr"
 YEARS       = [2018, 2019, 2021, 2022, 2023, 2024]
 FILENAME    = "psam_p06.csv"
 OUTPUT_PATH = os.path.join(BASE_DIR, "persons_master.csv")
+
+def master_file_exists():
+    if os.path.exists(OUTPUT_PATH):
+        response = input(
+            f"{OUTPUT_PATH} already exists. Rebuild? (y/n): "
+        ).strip().lower()
+        return response != "y"
+    return False
 
 def download_acs_1year_person_data(state_abbr="ca", years=YEARS):
     """
     Downloads 1-Year ACS PUMS person files. 
     """
+    print(f"Starting download for years: {YEARS}")
+    print(f"Output will be saved to:     {OUTPUT_PATH}\n")
     for year in years:
         url = f"https://www2.census.gov/programs-surveys/acs/data/pums/{year}/1-Year/csv_p{state_abbr}.zip"
-        dest_folder = str(SCRIPT_DIR / f"data_persons_{state_abbr}_1yr" / str(year))
-
-        if os.path.exists(dest_folder):
-            response = input(
-                f"Folder '{dest_folder}' already exists. Redownload? (y/n): "
-            ).strip().lower()
-            if response != "y":
-                print(f"  Skipping {year}.")
-                continue
-            print(f"  Redownloading {year}...")
+        dest_folder = f"1_Raw_Data/data_persons_{state_abbr}_1yr/{year}"
 
         os.makedirs(dest_folder, exist_ok=True)
         print(f"Downloading {year} 1-Year data from:\n  {url}")
@@ -105,9 +105,9 @@ def build_master_common_columns(base_dir=BASE_DIR, years=YEARS, filename=FILENAM
     print(f"Master shape: {master.shape[0]:,} rows, {master.shape[1]} cols")
     
     before = len(master)
-    master = master[master["AGEP"] > 18]
-    print(f"Removed (age ≤ 18): {before - len(master):,}")
-    print(f"Final rows  (19+) : {len(master):,}")
+    master = master[master["AGEP"] >= 18]
+    print(f"Removed (age < 18): {before - len(master):,}")
+    print(f"Final rows  (18+) : {len(master):,}")
     
     master.to_csv(output_path, index=False)
     print(f"Saved -> {output_path}")
@@ -117,15 +117,17 @@ def build_master_common_columns(base_dir=BASE_DIR, years=YEARS, filename=FILENAM
 
 
 if __name__ == "__main__":
-    print(f"Starting download for years: {YEARS}")
-    print(f"Output will be saved to:     {OUTPUT_PATH}\n")
 
-    download_acs_1year_person_data()
-    master_df, common_cols = build_master_common_columns()
+    exists = master_file_exists()
 
-    print("\n Data successfully downloaded! Summary:")
-    print(f"  Rows    : {master_df.shape[0]:,}")
-    print(f"  Columns : {master_df.shape[1]}")
+    if exists:
+        print(f"Using existing file at {OUTPUT_PATH}")
+    else:
+        download_acs_1year_person_data()
+        master_df, common_cols = build_master_common_columns()
+        print("\n Data successfully downloaded! Summary:")
+        print(f"  Rows    : {master_df.shape[0]:,}")
+        print(f"  Columns : {master_df.shape[1]}")
 
 
 
