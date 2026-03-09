@@ -1066,26 +1066,24 @@
     ]
   },
   "optimal_features": [
-    "WKL",
     "education_tier",
     "MSP",
     "WKHP",
-    "LANX",
     "ESR",
-    "MAR",
     "ENG",
-    "is_latinx",
     "CIT",
+    "MAR",
     "MIG",
+    "is_latinx",
     "has_insurance",
     "AGEP",
-    "SEX",
     "OCCP",
     "race_white",
     "race_black",
     "race_asian",
     "race_indigenous",
     "race_other",
-    "race_ethnic_aggregate"
+    "race_ethnic_aggregate",
+    "SEX"
   ]
 }
