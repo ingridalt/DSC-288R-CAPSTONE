@@ -26,7 +26,8 @@ from pathlib import Path
 import warnings
 warnings.filterwarnings('ignore')
 
-BASE_DIR    = "data_persons_ca_1yr"
+SCRIPT_DIR  = Path(__file__).resolve().parent
+BASE_DIR    = str(SCRIPT_DIR / "data_persons_ca_1yr")
 YEARS       = [2018, 2019, 2021, 2022, 2023, 2024]
 FILENAME    = "psam_p06.csv"
 OUTPUT_PATH = os.path.join(BASE_DIR, "persons_master.csv")
@@ -37,7 +38,7 @@ def download_acs_1year_person_data(state_abbr="ca", years=YEARS):
     """
     for year in years:
         url = f"https://www2.census.gov/programs-surveys/acs/data/pums/{year}/1-Year/csv_p{state_abbr}.zip"
-        dest_folder = f"data_persons_{state_abbr}_1yr/{year}"
+        dest_folder = str(SCRIPT_DIR / f"data_persons_{state_abbr}_1yr" / str(year))
 
         if os.path.exists(dest_folder):
             response = input(
