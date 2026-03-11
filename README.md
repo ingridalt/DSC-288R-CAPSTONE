@@ -51,22 +51,24 @@ Split strategy: Temporal — train on historical years, test on 2024 holdout to 
 <pre>
 ├── 1_Raw_Data/
 │   └── data_persons_ca_1yr/persons_master.csv
-|   └── Loading of raw data and conversion into csv format from ACS FTP Site
+|   └── download_acs_data.py Loading of raw data and conversion into csv format from ACS FTP Site
 ├── 2_EDA/
 │   └── EDA notebooks and visualizations through EDA_Master.ipynb
 ├── 3_Data_Preprocessing/
-│   ├── 3a_Preprocessing_Baseline.ipynb     # Baseline preprocessing (LR)
-│   ├── 3b_Preprocessing_RandomForest.ipynb # Random Forest preprocessing + feature selection
-│   ├── 3c_Preprocessing_XGBoost.ipynb     # XGBoost preprocessing + feature selection
+│   ├── Master_Preprocessing.ipynb  # Master Preprocessing notebook generating train_engineered.csv and test_engineered.csv used globally across all files
 │   └── preprocessing_data/
 │       ├── train_engineered.csv
-│       ├── test_engineered.csv
-│       ├── baseline_train_engineered.csv
-│       └── baseline_test_engineered.csv
+│       └── test_engineered.csv
 ├── 4_Models/
 │   ├── 4a_Baseline.ipynb 
 │   ├── 4b_RandomForest_Model.ipynb
 │   └── 4c_XGBoost_Model.ipynb
+│ 
+├── 5_Feature_Transformer/
+│   ├── FT-Model-Build.ipynb # FT model build
+│   ├── data_to_tesnor.py #  python class that  converts g data to tensor format 
+│   └── ft_model_def.py # python class that defines the FT Model layers 
+│
 ├── README.md
 ├── Makefile
 ├── Requirements.txt
@@ -79,6 +81,15 @@ Split strategy: Temporal — train on historical years, test on 2024 holdout to 
 `conda init`
 
 `make setup`
+
+*Note:* conda init modifies your shell configuration. 
+After running it, you will need to open a new terminal (or run source ~/.bashrc / source ~/.zshrc)
+for the changes to take effect before proceeding with make setup.
+
+<u>After setup, activate the environment in your terminal:</u>
+`conda activate poverty_prediction`
+
+Alternatively, if working in Jupyter, simply select the "Python (Poverty Project)" kernel from the kernel menu — no terminal activation needed.
 
 <u>Run this command to update any new dependencies from other users</u>
 
@@ -96,8 +107,8 @@ This project uses the [American Community Survey (ACS) PUMS 1-Year](https://www.
 person-level microdata for California, covering **2018, 2019, 2021, 2022, 2023, and 2024** 
 (2020 is excluded due to pandemic-related data collection disruptions).
 
-**To download the raw data, run:**
-```bash
+** Note: This script must be run from the root of the project. To download the raw data run:**
+```
 python 1_Raw_Data/download_acs_data.py
 ```
 
