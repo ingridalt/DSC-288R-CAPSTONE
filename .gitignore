@@ -1,27 +1,20 @@
-
-# Random Forest artifacts
-3_Data_Preprocessing/preprocessing_data/
 *.npz
 *.joblib
 *.pkl
 
-# RF outputs
 y_*_rf.csv# Jupyter
 .ipynb_checkpoints/
 
-# Python
 __pycache__/
 *.pyc
 .env
 
-# Data files (do not commit)
 data_persons_ca_1yr/
-3_Data_Preprocessing+Models/preprocessing_data/
-3_Data_Preprocessing+Models/catboost_info/
-
 .DS_Store
-3_Data_Preprocessing/preprocessing_data/test_engineered.csv
-3_Data_Preprocessing/preprocessing_data/train_data_final_feat_no_preprocessing.csv
-3_Data_Preprocessing/preprocessing_data/train_engineered.csv
 
 venv/
+3_Data_Preprocessing/preprocessing_data/train_engineered.csv
+3_Data_Preprocessing/preprocessing_data/test_engineered.csv
+3_Data_Preprocessing/preprocessing_data/ft_train_binary.parquet
+3_Data_Preprocessing/preprocessing_data/ft_train_4class.parquet
+3_Data_Preprocessing/preprocessing_data/ft_test.parquet

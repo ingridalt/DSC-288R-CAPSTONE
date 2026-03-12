@@ -1,0 +1,22 @@
+feature,description,source
+WKL,When last worked,PUMS original
+education_tier,"Education tier (0=No HS, 1=HS/GED, 2=Some College/Assoc, 3=Bachelor's, 4=Advanced)",Engineered from SCHL
+MSP,"Married, spouse present/spouse absent",PUMS original
+WKHP,Usual hours worked per week past 12 months,PUMS original
+LANX,Language other than English spoken at home,PUMS original
+ESR,Employment status recode,PUMS original
+MAR,Marital status,PUMS original
+ENG,Ability to speak English,PUMS original
+is_latinx,Hispanic/Latino indicator (1 if HISP > 1),Engineered from HISP
+CIT,Citizenship status,PUMS original
+MIG,Mobility status (lived here 1 year ago),PUMS original
+has_insurance,Health insurance coverage indicator (1 if HICOV = 1),Engineered from HICOV
+AGEP,Age,PUMS original
+SEX,Sex,PUMS original
+OCCP,Occupation recode based on 2018 OCC codes,PUMS original
+race_white,White race indicator (domain-included),Engineered from RACWHT
+race_black,Black race indicator (domain-included),Engineered from RACBLK
+race_asian,Asian race indicator (domain-included),Engineered from RACASN
+race_indigenous,"Indigenous race indicator — AIAN, NH, or PI (domain-included)",Engineered from RACAIAN/RACNH/RACPI
+race_other,Some other race indicator (domain-included),Engineered from RACSOR
+race_ethnic_aggregate,Count of racial/ethnic group memberships (domain-included),Engineered from race one-hot columns
