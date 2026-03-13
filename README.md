@@ -56,16 +56,17 @@ Split strategy: Temporal — train on historical years, test on 2024 holdout to 
 │   └── EDA notebooks and visualizations through EDA_Master.ipynb
 ├── 3_Data_Preprocessing/
 │   ├── Master_Preprocessing.ipynb  # Master Preprocessing notebook generating train_engineered.csv and test_engineered.csv used globally across all files
-│   └── preprocessing_data/
+│   ├── preprocessing_data/
 │       ├── train_engineered.csv
 │       └── test_engineered.csv
+    └──  FT-Preprocessing.ipynb # Required preprocessing for the FT Dataset (converts files to parquet, this was done due to env limitations in Datahub)
 ├── 4_Models/
 │   ├── 4a_Baseline.ipynb 
 │   ├── 4b_RandomForest_Model.ipynb
 │   └── 4c_XGBoost_Model.ipynb
 │ 
 ├── 5_Feature_Transformer/
-│   ├── FT-Model-Build.ipynb # FT model build
+│   ├── FT-Model-Build.ipynb # FT model build <u>Note:</u> To run this notebook 
 │   ├── data_to_tesnor.py #  python class that  converts g data to tensor format 
 │   └── ft_model_def.py # python class that defines the FT Model layers 
 │
@@ -75,7 +76,7 @@ Split strategy: Temporal — train on historical years, test on 2024 holdout to 
 </pre>
 
 
-#### ** Conda Environment Setup**
+#### **Conda Environment Setup**
 <u>To use the Conda env, user must run the following commands </u>
 
 `conda init`
