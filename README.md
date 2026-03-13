@@ -47,6 +47,11 @@ Split strategy: Temporal — train on historical years, test on 2024 holdout to 
 </tbody>
 </table>
 
+### Training Env Note
+
+All training was conducted on an NVIDIA RTX A5000 GPU (24 GB VRAM, CUDA 12.2) within a 16 GB RAM environment; a GPU is required to train the FT-Transformer in a reasonable time, as the quadratic complexity of multi-head self-attention with respect to sequence length makes CPU training prohibitively slow at this data scale
+
+
 #### Project Structure 
 <pre>
 ├── 1_Raw_Data/
@@ -66,7 +71,7 @@ Split strategy: Temporal — train on historical years, test on 2024 holdout to 
 │   └── 4c_XGBoost_Model.ipynb
 │ 
 ├── 5_Feature_Transformer/
-│   ├── FT-Model-Build.ipynb # FT model build <u>Note:</u> To run this notebook 
+│   ├── FT-Model-Build.ipynb # FT model build <u>Note:</u> To run this notebook a GPU is required, review details below for more information 
 │   ├── data_to_tesnor.py #  python class that  converts g data to tensor format 
 │   └── ft_model_def.py # python class that defines the FT Model layers 
 │
