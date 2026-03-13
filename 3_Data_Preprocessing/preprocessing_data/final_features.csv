@@ -20,3 +20,4 @@ race_asian,Asian race indicator (domain-included),Engineered from RACASN
 race_indigenous,"Indigenous race indicator — AIAN, NH, or PI (domain-included)",Engineered from RACAIAN/RACNH/RACPI
 race_other,Some other race indicator (domain-included),Engineered from RACSOR
 race_ethnic_aggregate,Count of racial/ethnic group memberships (domain-included),Engineered from race one-hot columns
+disability_score,"Disability severity score 0-6 (domain-included)",Engineered from DPHY/DREM/DEYE/DDRS/DEAR/DOUT
