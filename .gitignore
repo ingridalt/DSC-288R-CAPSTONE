@@ -1,3 +1,8 @@
+        3_Data_Preprocessing/preprocessing_data/baseline_test_engineered.csv
+        3_Data_Preprocessing/preprocessing_data/baseline_train_engineered.csv
+        3_Data_Preprocessing/preprocessing_data/train_data_final_feat_no_preprocessing.csv
+        3_Data_Preprocessing/preprocessing_data/y_test_rf.csv
+        3_Data_Preprocessing/preprocessing_data/y_train_rf.csv
 *.npz
 *.joblib
 *.pkl
@@ -18,3 +23,4 @@ venv/
 3_Data_Preprocessing/preprocessing_data/ft_train_binary.parquet
 3_Data_Preprocessing/preprocessing_data/ft_train_4class.parquet
 3_Data_Preprocessing/preprocessing_data/ft_test.parquet
+3_Data_Preprocessing/preprocessing_data/*.csv
